@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 
 intents = discord.Intents.default()
@@ -16,4 +17,4 @@ async def on_member_join(member):
     if channel:
         await channel.send(f"Welcome, {member.mention}! Be sure to check out {rules_channel.mention}")
 
-bot.run(os.getenv("MTQzMzY2OTUwOTcwMDY0ODk2MA.G4OpEP.bVX2G4-dTb4v-UXf5dqmuGga4KikAbgQWUdS50"))
+bot.run(os.getenv("TOKEN"))
