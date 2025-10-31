@@ -16,4 +16,4 @@ async def on_member_join(member):
     if channel:
         await channel.send(f"Welcome, {member.mention}! Be sure to check out {#1372767539863748698}")
 
-bot.run(os.getenv("https://discord.com/oauth2/authorize?client_id=1433669509700648960&permissions=52224&integration_type=0&scope=bot+applications.commands"))
+bot.run(os.getenv("MTQzMzY2OTUwOTcwMDY0ODk2MA.G4OpEP.bVX2G4-dTb4v-UXf5dqmuGga4KikAbgQWUdS50"))
