@@ -26,9 +26,9 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 ├── config.py               # Configuration constants
 ├── requirements.txt        # Python dependencies
 ├── server_settings.json    # Per-server settings storage (auto-generated)
-├── .gitignore             # Git ignore file
-├── README.md              # Basic project readme
-└── replit.md              # This file - comprehensive documentation
+├── .gitignore              # Git ignore file
+├── README.md               # Basic project readme
+└── replit.md               # This file - comprehensive documentation
 ```
 
 ## Features
@@ -111,7 +111,7 @@ Configure bot settings for your server:
 ## Configuration
 
 ### Bot Permissions
-When inviting the bot, grant these permissions:
+When inviting the bot, grant this permission:
 - ✅ Administrator
 
 ### Server Setup
@@ -194,6 +194,6 @@ The bot uses a modular architecture:
 - **v1.0** (Oct 31, 2025) - Initial release with basic welcome functionality
 
 
-TOS:
+# TOS:
 
-Privacy Policy:
+# Privacy Policy:
