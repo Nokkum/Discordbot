@@ -62,8 +62,13 @@ class BotCommands(commands.Cog):
                 inline=False
             )
             embed.add_field(
+                name="/setchannel",
+                value="Set which channel to use for welcome/goodbye messages (Admin only)",
+                inline=False
+            )
+            embed.add_field(
                 name="/config",
-                value="Configure bot settings for this server (Admin only)",
+                value="Configure bot messages and toggles (Admin only)",
                 inline=False
             )
             
@@ -123,14 +128,38 @@ class BotCommands(commands.Cog):
         except Exception as e:
             await interaction.response.send_message(f"Error: {str(e)}", ephemeral=True)
     
+    @app_commands.command(name="setchannel", description="Set which channel to use for welcome/goodbye messages")
+    @app_commands.describe(
+        channel_type="Which channel you want to set",
+        channel="The channel to use"
+    )
+    @app_commands.choices(channel_type=[
+        app_commands.Choice(name="Welcome/Goodbye Channel", value="welcome_channel"),
+        app_commands.Choice(name="Rules Channel", value="rules_channel")
+    ])
+    @app_commands.default_permissions(administrator=True)
+    async def setchannel(self, interaction: discord.Interaction, channel_type: str, channel: discord.TextChannel):
+        try:
+            self.db.update_server_setting(interaction.guild.id, channel_type, channel.name)
+            
+            channel_name = "Welcome/Goodbye" if channel_type == "welcome_channel" else "Rules"
+            
+            embed = create_embed(
+                title="✅ Channel Updated",
+                description=f"**{channel_name} channel** set to {channel.mention}",
+                color=DEFAULT_EMBED_COLOR
+            )
+            
+            await interaction.response.send_message(embed=embed, ephemeral=True)
+        except Exception as e:
+            await interaction.response.send_message(f"Error: {str(e)}", ephemeral=True)
+    
     @app_commands.command(name="config", description="Configure bot settings for this server")
     @app_commands.describe(
         setting="The setting to configure",
         value="The new value for the setting"
     )
     @app_commands.choices(setting=[
-        app_commands.Choice(name="Welcome Channel", value="welcome_channel"),
-        app_commands.Choice(name="Rules Channel", value="rules_channel"),
         app_commands.Choice(name="Welcome Message", value="welcome_message"),
         app_commands.Choice(name="Goodbye Message", value="goodbye_message"),
         app_commands.Choice(name="Welcome Enabled", value="welcome_enabled"),
