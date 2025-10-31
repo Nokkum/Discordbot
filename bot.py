@@ -14,7 +14,11 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     channel = discord.utils.get(member.guild.text_channels, name="welcome")
+    rules_channel = discord.utils.get(member.guild.text_channels, name="rules")
     if channel:
-        await channel.send(f"Welcome, {member.mention}! Be sure to check out {rules_channel.mention}")
+        if rules_channel:
+            await channel.send(f"Welcome, {member.mention}! Be sure to check out {rules_channel.mention}")
+        else:
+            await channel.send(f"Welcome, {member.mention}!")
 
 bot.run(os.getenv("TOKEN"))
