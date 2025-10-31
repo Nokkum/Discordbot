@@ -5,8 +5,8 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 
 **Current State:** Fully functional with all features operational. Running version 2.0.
 
-**Last Updated:** October 31, 2025
 
+## Recent Changes
 
 - **October 31, 2025 (v1.0):** Initial project setup
   - Installed Python 3.11 and discord.py dependencies
@@ -194,6 +194,6 @@ The bot uses a modular architecture:
 - **v1.0** (Oct 31, 2025) - Initial release with basic welcome functionality
 
 
-# TOS:
+## TOS:
 
-# Privacy Policy:
+## Privacy Policy:
