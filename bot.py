@@ -5,6 +5,44 @@ import logging
 from discord.ext import commands
 from database import Database
 from config import DEFAULT_PREFIX
+from cryptography.fernet import Fernet
+
+TOKEN_FILE = ".token"
+KEY_FILE = ".token.key"
+
+def generate_key():
+    """Load existing key or generate a new one."""
+    if not os.path.exists(KEY_FILE):
+        key = Fernet.generate_key()
+        with open(KEY_FILE, "wb") as f:
+            f.write(key)
+    with open(KEY_FILE, "rb") as f:
+        return f.read()
+
+def get_cipher():
+    """Return a Fernet cipher object."""
+    key = generate_key()
+    return Fernet(key)
+
+def get_token():
+    """Retrieve Discord token from env or encrypted file."""
+    token = os.getenv("DISCORD_TOKEN")
+    if token:
+        return token.strip()
+
+    # Load and decrypt token from file
+    if os.path.exists(TOKEN_FILE):
+        try:
+            cipher = get_cipher()
+            with open(TOKEN_FILE, "rb") as f:
+                encrypted = f.read()
+            return cipher.decrypt(encrypted).decode("utf-8")
+        except Exception as e:
+            raise RuntimeError(f"Failed to decrypt token: {e}")
+
+    raise RuntimeError(
+        "Discord token not found. Please save it via token_sidebar.py or set DISCORD_TOKEN."
+    )
 
 logging.basicConfig(
     level=logging.INFO,
@@ -81,7 +119,7 @@ async def on_app_command_error(interaction: discord.Interaction, error):
 
 async def main():
     async with bot:
-        token = os.getenv("TOKEN")
+        token = get_token()
         if not token:
             logger.error("No TOKEN found in environment variables!")
             return
