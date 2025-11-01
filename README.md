@@ -195,5 +195,7 @@ The bot uses a modular architecture:
 
 
 ## TOS:
+*I will add a link there someday*
 
 ## Privacy Policy:
+*same here*
