@@ -10,7 +10,7 @@
 ## Recent Changes
 
 **November 1, 2025 (v2.1):** Minor Update
-- added the token_sidebar.py that adds a sidebar where tokens can be placed and a .token file that has the token gets generated that is encrypted.
+- added the `token_sidebar.py` that adds a sidebar where tokens can be placed and a `.token` file that has the token gets generated that is encrypted.
 
 **October 31, 2025 (v2.0):** Major feature update
 - ✨ Added beautiful embed-based welcome and goodbye messages
