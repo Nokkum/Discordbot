@@ -1,2 +1,2 @@
-discord.py
-cryptography
+discord.py>=2.6.4
+cryptography>=46.0.3
