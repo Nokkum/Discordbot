@@ -12,7 +12,7 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 - ✨ Added beautiful embed-based welcome and goodbye messages
 - 💾 Implemented JSON-based database for persistent server settings
 - 🎨 Added customizable welcome/goodbye messages with variable support
-- 🔧 Implemented slash commands: /help, /ping, /serverinfo, /userinfo, /config
+- 🔧 Implemented slash commands: `/help`, `/ping`, `/serverinfo`, `/userinfo`, `/config`
 - 🛡️ Added Comprehensive error handling throughout the codebase
 - 🗂️ Restructured code into modular files (bot.py, commands.py, events.py, database.py, utils.py, config.py)
 - 👋 Added goodbye messages when members leave
@@ -34,11 +34,11 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 ├── database.py             # JSON-based database manager
 ├── utils.py                # Utility functions for formatting and embeds
 ├── config.py               # Configuration constants
-├── requirements.txt        # Python dependencies
-├── server_settings.json    # Per-server settings storage (auto-generated)
-├── .gitignore              # Git ignore file
-├── README.md               # Basic project readme
-└── replit.md               # This file - comprehensive documentation
+├── token_sidebar.py        # GUI tool for securely storing and encrypting Discord tokens
+├── requirements.txt.       # Python dependencies
+├── server_settings.json    # Per-server settings storage (auto generated)
+├── .gitignore              # Git ignore files
+└── README.md               # Basic project readme
 ```
 
 ## Features
