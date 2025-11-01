@@ -1,4 +1,6 @@
-# Sequential
+<p align="center">
+  <strong>Sequential</strong>
+</p>
 
 ## Overview
 A feature-rich Discord bot built with discord.py that welcomes new members, tracks departures, and provides useful server commands. The bot includes customizable messages, embeds, slash commands, and persistent server-specific settings.
