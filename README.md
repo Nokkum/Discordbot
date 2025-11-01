@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>Sequential</strong>
+  <strong># Sequential</strong>
 </p>
 
 ## Overview
