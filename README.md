@@ -9,7 +9,7 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 ## Recent Changes
 
 **November 1, 2025 (v2.1):** Minor Update
-- added the token_sidebar.py that adds a sidebar where tokens can be placed and a .token.key file that has the token gets generated that is encrypted.
+- added the token_sidebar.py that adds a sidebar where tokens can be placed and a .token file that has the token gets generated that is encrypted.
 
 **October 31, 2025 (v2.0):** Major feature update
 - ✨ Added beautiful embed-based welcome and goodbye messages
@@ -153,6 +153,7 @@ The bot runs automatically via the configured workflow:
 - Syncs slash commands with Discord
 - Listens for member join/leave events
 - Responds to slash commands
+- This bot can now securely store and load your Discord bot token
 
 ### Deployment
 Configured for continuous VM deployment, perfect for a Discord bot that needs 24/7 uptime.
@@ -173,8 +174,30 @@ When a server first uses the bot, these defaults are applied:
 }
 ```
 
+#### 🧩 Token Setup
+Before running `bot.py`, you must first run `token_sidebar.py` once to save your Discord token:
+
+```bash
+python token_sidebar.py
+```
+
+This will open up a small GUI where you can enter and encrypt your bot token
+- The token is saved in `.token` (encrypted) and `.token.key` (encryption key)
+- The bot automatically decrypts this token at startup.
+
+Alternatively, you can still set the token as an environment variable:
+```bash
+export DISCORD_TOKEN="your-token-here"
+```
+
+Then start the bot:
+```bash
+python bot.py
+```
+
 ## Dependencies
 - **discord.py 2.6.4+** - Python library for Discord API
+- **Cryptography** - Used for token encryption and decryption (required for `token_sidebar.py`)
 - **Python 3.11** - Runtime environment
 
 ## Architecture
