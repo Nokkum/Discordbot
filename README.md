@@ -8,6 +8,9 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 
 ## Recent Changes
 
+**November 1, 2025 (v2.1):** Minor Update
+- added the token_sidebar.py that adds a sidebar where tokens can be placed and a .token.key file that has the token gets generated that is encrypted.
+
 **October 31, 2025 (v2.0):** Major feature update
 - ✨ Added beautiful embed-based welcome and goodbye messages
 - 💾 Implemented JSON-based database for persistent server settings
@@ -34,7 +37,7 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 ├── database.py             # JSON-based database manager
 ├── utils.py                # Utility functions for formatting and embeds
 ├── config.py               # Configuration constants
-├── token_sidebar.py        # GUI tool for securely storing and encrypting Discord tokens
+├── token_sidebar.py        # GUI tool for securely storing and encrypting Discord token/s
 ├── requirements.txt.       # Python dependencies
 ├── server_settings.json    # Per-server settings storage (auto generated)
 ├── .gitignore              # Git ignore files
@@ -204,6 +207,7 @@ The bot uses a modular architecture:
 
 
 ## Version History
+- **v2.1** (Nov 1, 2025) - Minor update, adding token_sidebar.py and token encryption
 - **v2.0** (Oct 31, 2025) - Major feature update with embeds, commands, and database
 - **v1.0** (Oct 31, 2025) - Initial release with basic welcome functionality
 
