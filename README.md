@@ -112,7 +112,11 @@ Configure bot settings for your server:
 
 ### Bot Permissions
 When inviting the bot, grant this permission:
-- ✅ Administrator
+- ~~✅ Administrator~~
+- ✅ Manage Webhooks
+- ✅ View Channels
+- ✅ Send Messages
+- ✅ Attach Files
 
 ### Server Setup
 1. **Create channels:**
