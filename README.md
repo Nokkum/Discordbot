@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/Python-3.11-blue" alt="Python 3.11">
 </p>
 <p align="center">
- A feature-rich Discord bot built with discord.py that welcomes new members, tracks departures, and provides useful server commands. The bot includes customizable messages, embeds, slash commands, and persistent server-specific settings.
+ Sequential is a Discord bot framework that was built for modularity, database integration, and secure token handling.
 </p>
 
 
@@ -124,14 +124,6 @@ Configure bot settings for your server:
 
 ## Configuration
 
-### Bot Permissions
-When inviting the bot, grant this permission:
-- ~~✅ Administrator~~
-- ~~✅ Attach Files~~
-- ✅ Manage Webhooks
-- ✅ View Channels
-- ✅ Send Messages
-
 ### Server Setup
 1. **Create channels:**
    - `#welcome` - For welcome and goodbye messages (optional)
@@ -238,10 +230,3 @@ The bot uses a modular architecture:
 
 **Current State:** 
 - Fully functional with all features operational. Running version 2.1.
-
-
-## TOS:
-*I will add a link there someday*
-
-## Privacy Policy:
-*same here*
