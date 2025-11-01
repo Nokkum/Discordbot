@@ -230,14 +230,14 @@ The bot uses a modular architecture:
 - `on_command_error` - Error handling for text commands
 - `on_app_command_error` - Error handling for slash commands
 
-**Current State:** 
-- Fully functional with all features operational. Running version 2.0.
-
 
 ## Version History
 - **v2.1** (Nov 1, 2025) - Minor update, adding token_sidebar.py and token encryption
 - **v2.0** (Oct 31, 2025) - Major feature update with embeds, commands, and database
 - **v1.0** (Oct 31, 2025) - Initial release with basic welcome functionality
+
+**Current State:** 
+- Fully functional with all features operational. Running version 2.1.
 
 
 ## TOS:
