@@ -133,7 +133,7 @@ When inviting the bot, grant this permission:
 
 ### Server Setup
 1. **Create channels:**
-   - `#welcome` - For welcome and goodbye messages (required)
+   - `#welcome` - For welcome and goodbye messages (optional)
    - `#rules` - For rules reference (optional)
 
 2. **Invite the bot:**
