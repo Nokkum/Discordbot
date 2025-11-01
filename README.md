@@ -8,7 +8,7 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 
 ## Recent Changes
 
-- **October 31, 2025 (v2.0):**
+**October 31, 2025 (v2.0):** Major feature update
 - ✨ Added beautiful embed-based welcome and goodbye messages
 - 💾 Implemented JSON-based database for persistent server settings
 - 🎨 Added customizable welcome/goodbye messages with variable support
@@ -18,7 +18,7 @@ A feature-rich Discord bot built with discord.py that welcomes new members, trac
 - 👋 Added goodbye messages when members leave
 - ⚙️ Added admin configuration command to customize bot behavior per server
 
-- **October 31, 2025 (v1.0):** Initial project setup
+**October 31, 2025 (v1.0):** Initial project setup
   - Installed Python 3.11 and discord.py dependencies
   - Fixed code bug: Added proper `rules_channel` variable definition
   - Added message content intent
