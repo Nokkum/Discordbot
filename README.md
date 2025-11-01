@@ -158,6 +158,7 @@ The bot runs automatically via the configured workflow:
 ### Deployment
 Configured for continuous VM deployment, perfect for a Discord bot that needs 24/7 uptime.
 
+#### 🧩 Token Setup
 Before running `bot.py`, you must first run `token_sidebar.py` once to save your Discord token:
 
 ```bash
@@ -177,6 +178,7 @@ Then start the bot:
 ```bash
 python bot.py
 ```
+
 
 ## Default Settings
 
