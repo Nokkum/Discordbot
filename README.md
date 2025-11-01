@@ -158,23 +158,6 @@ The bot runs automatically via the configured workflow:
 ### Deployment
 Configured for continuous VM deployment, perfect for a Discord bot that needs 24/7 uptime.
 
-## Default Settings
-
-When a server first uses the bot, these defaults are applied:
-
-```json
-{
-  "welcome_channel": "welcome",
-  "rules_channel": "rules",
-  "welcome_enabled": true,
-  "goodbye_enabled": true,
-  "welcome_message": "Welcome to {server}, {mention}! 🎉\n\nWe're glad to have you here. You're member #{member_count}!",
-  "goodbye_message": "{username} has left the server. We'll miss you! 👋",
-  "embed_color": 0x00ff00
-}
-```
-
-#### 🧩 Token Setup
 Before running `bot.py`, you must first run `token_sidebar.py` once to save your Discord token:
 
 ```bash
@@ -193,6 +176,22 @@ export DISCORD_TOKEN="your-token-here"
 Then start the bot:
 ```bash
 python bot.py
+```
+
+## Default Settings
+
+When a server first uses the bot, these defaults are applied:
+
+```json
+{
+  "welcome_channel": "welcome",
+  "rules_channel": "rules",
+  "welcome_enabled": true,
+  "goodbye_enabled": true,
+  "welcome_message": "Welcome to {server}, {mention}! 🎉\n\nWe're glad to have you here. You're member #{member_count}!",
+  "goodbye_message": "{username} has left the server. We'll miss you! 👋",
+  "embed_color": 0x00ff00
+}
 ```
 
 ## Dependencies
