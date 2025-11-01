@@ -4,10 +4,6 @@
 </p>
 
 
-**Current State:** 
-- Fully functional with all features operational. Running version 2.0.
-
-
 ## Recent Changes
 
 **November 1, 2025 (v2.1):** Minor Update
@@ -230,6 +226,9 @@ The bot uses a modular architecture:
 - `on_member_remove` - Goodbye message handling
 - `on_command_error` - Error handling for text commands
 - `on_app_command_error` - Error handling for slash commands
+
+**Current State:** 
+- Fully functional with all features operational. Running version 2.0.
 
 
 ## Version History
