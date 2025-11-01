@@ -1,5 +1,10 @@
 <h1 align="center">Sequential</h1>
 <p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-blue" alt="Python 3.11">
+  <img src="https://img.shields.io/badge/discord.py-2.6.4+-blue" alt="discord.py">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
+</p>
+<p align="center">
  A feature-rich Discord bot built with discord.py that welcomes new members, tracks departures, and provides useful server commands. The bot includes customizable messages, embeds, slash commands, and persistent server-specific settings.
 </p>
 
