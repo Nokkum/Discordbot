@@ -4,8 +4,8 @@
 </p>
 
 
-
-**Current State:** Fully functional with all features operational. Running version 2.0.
+**Current State:** 
+- Fully functional with all features operational. Running version 2.0.
 
 
 ## Recent Changes
