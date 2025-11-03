@@ -9,6 +9,13 @@
 
 ## Recent Changes
 
+**November 3, 2025 (v2.2):** Changes
+- Made changes to the `token_sidebar.py` to `credential_handler.py`
+- Expanded GUI with dropdown bar with file type and provider type selector
+- Differentiated tokens and api with clear identifiers (e.g `.discord.token`, `.discord.key`, `.openai.api`, `.openai.key`)
+- Made changes to `bot.py` for `credential_handler.py` support
+- Provider section integration (Discord, OpenAI, Google, Github, Slack, Others)
+
 **November 1, 2025 (v2.1):** Minor Update
 - Added the `token_sidebar.py` which adds a GUI for the placement of tokens, acts like the `secrets` in local storage
 - Added the `.token` file which holds the encrypted bot tokens
@@ -24,12 +31,6 @@
 - 👋 Added goodbye messages when members leave
 - ⚙️ Added admin configuration command to customize bot behavior per server
 
-**October 31, 2025 (v1.0):** Initial project setup
-  - Installed Python 3.11 and discord.py dependencies
-  - Fixed code bug: Added proper `rules_channel` variable definition
-  - Added message content intent
-  - Created .gitignore for Python project
-  - Configured workflow and deployment
 
 ## Project Structure
 ```
@@ -226,6 +227,7 @@ The bot uses a modular architecture:
 
 
 ## Version History
+- **v2.2** (Nov 3, 2025) - Changes, changed `token_sidebar.py` to `credential_handler.py`, added selectors in GUI, added multiple providers in selector
 - **v2.1** (Nov 1, 2025) - Minor update, adding token_sidebar.py and token encryption
 - **v2.0** (Oct 31, 2025) - Major feature update with embeds, commands, and database
 - **v1.0** (Oct 31, 2025) - Initial release with basic welcome functionality
