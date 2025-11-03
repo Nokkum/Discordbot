@@ -7,41 +7,113 @@ from database import Database
 from config import DEFAULT_PREFIX
 from cryptography.fernet import Fernet
 
-TOKEN_FILE = ".token"
-KEY_FILE = ".token.key"
+BASE_DIR = os.path.join(os.getcwd(), ".sequential")
+CATEGORIES = ["tokens", "apis"]
 
-def generate_key():
-    """Load existing key or generate a new one."""
-    if not os.path.exists(KEY_FILE):
+
+def ensure_dirs():
+    """Ensure that the folder structure exists."""
+    for category in CATEGORIES:
+        for sub in ["encrypted", "key"]:
+            os.makedirs(os.path.join(BASE_DIR, category, sub), exist_ok=True)
+
+
+def get_paths(category: str, provider: str):
+    """
+    Get the paths for encrypted token/key files.
+    Args:
+        category (str): 'tokens' or 'apis'
+        provider (str): e.g., 'discord', 'handler', 'google'
+    Returns:
+        (token_file, key_file)
+    """
+    ensure_dirs()
+    category = category.lower()
+    provider = provider.lower()
+
+    if category not in CATEGORIES:
+        raise ValueError(f"Invalid category '{category}'. Must be one of {CATEGORIES}.")
+
+    enc_dir = os.path.join(BASE_DIR, category, "encrypted")
+    key_dir = os.path.join(BASE_DIR, category, "key")
+
+    token_file = os.path.join(enc_dir, f".{provider}.token")
+    key_file = os.path.join(key_dir, f".{provider}.key")
+
+    return token_file, key_file
+
+
+def generate_key(key_file: str) -> bytes:
+    """Generate a new Fernet key if missing, otherwise load existing one."""
+    if not os.path.exists(key_file):
         key = Fernet.generate_key()
-        with open(KEY_FILE, "wb") as f:
+        with open(key_file, "wb") as f:
             f.write(key)
-    with open(KEY_FILE, "rb") as f:
+    with open(key_file, "rb") as f:
         return f.read()
 
-def get_cipher():
-    """Return a Fernet cipher object."""
-    key = generate_key()
+
+def get_cipher(key_file: str) -> Fernet:
+    """Return a Fernet cipher object for the given key file."""
+    key = generate_key(key_file)
     return Fernet(key)
 
-def get_token():
-    """Retrieve Discord token from env or encrypted file."""
-    token = os.getenv("DISCORD_TOKEN")
-    if token:
-        return token.strip()
 
-    if os.path.exists(TOKEN_FILE):
+def save_secret(value: str, category: str, provider: str):
+    """
+    Encrypt and save a secret (token/API key).
+    Args:
+        value (str): the secret value
+        category (str): 'tokens' or 'apis'
+        provider (str): provider name (e.g., Discord, Handler, Google)
+    """
+    token_file, key_file = get_paths(category, provider)
+    cipher = get_cipher(key_file)
+    encrypted = cipher.encrypt(value.strip().encode("utf-8"))
+    with open(token_file, "wb") as f:
+        f.write(encrypted)
+
+
+def load_secret(category: str, provider: str) -> str:
+    """
+    Decrypt and load a saved secret (token/API key).
+    Args:
+        category (str): 'tokens' or 'apis'
+        provider (str): provider name
+    Returns:
+        str: decrypted secret
+    Raises:
+        RuntimeError: if no secret found or decryption fails
+    """
+    token_file, key_file = get_paths(category, provider)
+
+    env_var = f"{provider.upper()}_{category[:-1].upper()}"  # e.g., DISCORD_TOKEN or HANDLER_TOKEN
+    env_value = os.getenv(env_var)
+    if env_value:
+        return env_value.strip()
+
+    if os.path.exists(token_file):
         try:
-            cipher = get_cipher()
-            with open(TOKEN_FILE, "rb") as f:
+            cipher = get_cipher(key_file)
+            with open(token_file, "rb") as f:
                 encrypted = f.read()
             return cipher.decrypt(encrypted).decode("utf-8")
         except Exception as e:
-            raise RuntimeError(f"Failed to decrypt token: {e}")
+            raise RuntimeError(f"Failed to decrypt {provider} {category[:-1]}: {e}")
 
     raise RuntimeError(
-        "Discord token not found. Please save it via token_sidebar.py or set DISCORD_TOKEN."
+        f"{provider.capitalize()} {category[:-1]} not found. "
+        f"Please save it first via the GUI or set {env_var} environment variable."
     )
+
+def get_token(provider: str = "discord") -> str:
+    """Retrieve a Discord or other bot token."""
+    return load_secret("tokens", provider)
+
+
+def get_api_key(provider: str = "handler") -> str:
+    """Retrieve an API key (for Handler, Google, OpenAI, etc.)."""
+    return load_secret("apis", provider)
 
 logging.basicConfig(
     level=logging.INFO,
