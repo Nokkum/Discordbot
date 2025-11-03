@@ -5,7 +5,7 @@ import os
 from cryptography.fernet import Fernet
 
 BASE_DIR = os.path.join(os.getcwd(), ".sequential")
-BOT_FILE = "main.py"
+BOT_FILE = "bot.py"
 
 
 
