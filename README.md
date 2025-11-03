@@ -10,7 +10,9 @@
 ## Recent Changes
 
 **November 1, 2025 (v2.1):** Minor Update
-- added the `token_sidebar.py` that adds a sidebar where tokens can be placed and a `.token` file that has the token gets generated that is encrypted.
+- Added the `token_sidebar.py` which adds a GUI for the placement of tokens, acts like the `secrets`
+- Added the `.token` file which holds the encrypted bot tokens
+- Added the `.token.key` file which is the encryption key to the `.token` file
 
 **October 31, 2025 (v2.0):** Major feature update
 - ✨ Added beautiful embed-based welcome and goodbye messages
