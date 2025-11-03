@@ -30,7 +30,6 @@ def get_token():
     if token:
         return token.strip()
 
-    # Load and decrypt token from file
     if os.path.exists(TOKEN_FILE):
         try:
             cipher = get_cipher()
