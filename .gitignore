@@ -48,7 +48,7 @@ Thumbs.db
 # Bot data files
 server_settings.json
 
-# Sensitive token files
+# Sensitive files
 
 # Token files
 .token
