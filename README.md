@@ -10,7 +10,7 @@
 ## Recent Changes
 
 **November 1, 2025 (v2.1):** Minor Update
-- Added the `token_sidebar.py` which adds a GUI for the placement of tokens, acts like the `secrets`
+- Added the `token_sidebar.py` which adds a GUI for the placement of tokens, acts like the `secrets` in local storage
 - Added the `.token` file which holds the encrypted bot tokens
 - Added the `.token.key` file which is the encryption key to the `.token` file
 
