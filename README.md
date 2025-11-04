@@ -41,7 +41,7 @@
 ├── database.py             # JSON-based database manager
 ├── utils.py                # Utility functions for formatting and embeds
 ├── config.py               # Configuration constants
-├── token_sidebar.py        # GUI tool for securely storing and encrypting Discord token/s
+├── credential_handler.py   # GUI tool for securely storing and encrypting Discord token/s
 ├── requirements.txt.       # Python dependencies
 ├── server_settings.json    # Per-server settings storage (auto generated)
 ├── .gitignore              # Git ignore files
