@@ -10,7 +10,7 @@
 ## Recent Changes
 
 **Rollback Update**
-- Reverted `credential_handler.py` to `token_handler.py`
+- Reverted the changes lf `credential_handler.py` back to `token_sidebar.py`
 
 **November 1, 2025 (v2.1):** Minor Update
 - Added the `token_sidebar.py` which adds a GUI for the placement of tokens, acts like the `secrets` in local storage
