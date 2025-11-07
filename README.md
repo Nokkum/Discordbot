@@ -37,7 +37,7 @@
 ├── database.py             # JSON-based database manager
 ├── utils.py                # Utility functions for formatting and embeds
 ├── config.py               # Configuration constants
-├── credential_handler.py   # GUI tool for securely storing and encrypting token credentials
+├── token_sidebar.py        # GUI tool for securely storing and encrypting discord token credentials
 ├── requirements.txt.       # Python dependencies
 ├── server_settings.json    # Per-server settings storage (auto generated)
 ├── .gitignore              # Git ignore files
@@ -223,7 +223,6 @@ The bot uses a modular architecture:
 
 
 ## Version History
-- **v2.2** (Nov 3, 2025) - Changes, changed `token_sidebar.py` to `credential_handler.py`, added selectors in GUI, added multiple providers in selector
 - **v2.1** (Nov 1, 2025) - Minor update, adding token_sidebar.py and token encryption
 - **v2.0** (Oct 31, 2025) - Major feature update with embeds, commands, and database
 - **v1.0** (Oct 31, 2025) - Initial release with basic welcome functionality
