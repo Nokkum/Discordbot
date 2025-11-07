@@ -9,12 +9,8 @@
 
 ## Recent Changes
 
-**November 3, 2025 (v2.2):** Changes
-- Made changes to the `token_sidebar.py` to `credential_handler.py`
-- Expanded GUI with dropdown bar with file type and provider type selector
-- Differentiated tokens and api with clear identifiers (e.g `.discord.token`, `.discord.key`, `.openai.api`, `.openai.key`)
-- Made changes to `bot.py` for `credential_handler.py` support
-- Provider section integration (Discord, OpenAI, Google, Github, Slack, Others)
+**Rollback Update**
+- Reverted `credential_handler.py` to `token_handler.py`
 
 **November 1, 2025 (v2.1):** Minor Update
 - Added the `token_sidebar.py` which adds a GUI for the placement of tokens, acts like the `secrets` in local storage
