@@ -1,4 +1,4 @@
-<h1 align="center">Sequential-Discord</h1>
+<h1 align="center">Sequential-Bot</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.11-blue" alt="Python 3.11">
 </p>
